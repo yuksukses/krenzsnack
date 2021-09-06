@@ -68,6 +68,68 @@ Dashboard
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
+                <h5>Stock Tersedia</h5>
+            </div>
+            <div class="ibox-content">
+                <span class="pull-right"><i class="fa fa-cube fa-5x"></i></span>
+                <h1 class="no-margins font-bold">{{ $stock }} Pcs</h1>
+                <br>
+                <a href="{{ route('produk.index') }}">
+                    <h5>Lihat <i class="fa fa-arrow-circle-right"></i></h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Pengeluaran</h5>
+            </div>
+            <div class="ibox-content">
+                <span class="pull-right"><i class="fa fa-dollar fa-5x"></i></span>
+                <h1 class="no-margins font-bold">Rp. {{ format_uang($pengeluaran) }},00</h1>
+                <br>
+                <a href="{{ route('pengeluaran.index') }}">
+                    <h5>Lihat <i class="fa fa-arrow-circle-right"></i></h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Pemasukan</h5>
+            </div>
+            <div class="ibox-content">
+                <span class="pull-right"><i class="fa fa-bank fa-5x"></i></span>
+                <h1 class="no-margins font-bold">Rp. {{ format_uang($pemasukan) }},00</h1>
+                
+                <br>
+                <a href="{{ route('pemasukan.index') }}">
+                <h5>Lihat <i class="fa fa-arrow-circle-right"></i></h5>
+
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Total Pendapatan</h5>
+            </div>
+            <div class="ibox-content">
+                <span class="pull-right"><i class="fa fa-money fa-5x"></i></span>
+                <h1 class="no-margins font-bold">Rp. {{ format_uang($hasil) }},00</h1>
+                <br>
+                <a href="{{ route('laporan.index') }}">
+                    <h5>Lihat <i class="fa fa-arrow-circle-right"></i></h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
                 <h5>Grafik Pendapatan {{ tanggal_indonesia($tanggal_awal, false) }} s/d
                     {{ tanggal_indonesia($tanggal_akhir, false) }}
                 </h5>

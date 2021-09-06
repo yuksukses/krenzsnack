@@ -1,0 +1,3 @@
+[06-Sep-2021 08:08:41 UTC] PHP Warning:  require(/home/krenzsna/krenzsnack/vendor/autoload.php): failed to open stream: No such file or directory in /home/krenzsna/krenzsnack/artisan on line 18
+[06-Sep-2021 08:08:41 UTC] PHP Warning:  require(/home/krenzsna/krenzsnack/vendor/autoload.php): failed to open stream: No such file or directory in /home/krenzsna/krenzsnack/artisan on line 18
+[06-Sep-2021 08:08:41 UTC] PHP Fatal error:  require(): Failed opening required '/home/krenzsna/krenzsnack/vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/krenzsna/krenzsnack/artisan on line 18

@@ -10,6 +10,7 @@ use App\Models\Member;
 use App\Models\Penjualan;
 use App\Models\Pembelian;
 use App\Models\Pengeluaran;
+use App\Models\Pemasukan;
 
 class DashboardController extends Controller
 {
@@ -38,10 +39,17 @@ class DashboardController extends Controller
             
             $tanggal_awal = date('Y-m-d', strtotime("+1 day", strtotime($tanggal_awal)));
         }
+        
+        $penjualan = Penjualan::sum('bayar');
+        $pembelian = Pembelian::sum('bayar');
+        $pengeluaran = Pengeluaran::sum('nominal');
+        $pemasukan = Pemasukan::sum('nominal');
+        $stock = Produk::sum('stok');
+        $hasil = $penjualan + $pemasukan - $pembelian - $pengeluaran;
 
 
         if (auth()->user()->level == 'admin') {
-            return view('admin.dashboard', compact('kategori', 'produk', 'supplier', 'member', 'tanggal_awal', 'tanggal_akhir', 'data_tanggal', 'data_pendapatan'));
+            return view('admin.dashboard', compact('kategori', 'produk', 'supplier', 'member', 'tanggal_awal', 'tanggal_akhir', 'data_tanggal', 'data_pendapatan','penjualan','pemasukan','pengeluaran','pembelian','hasil','stock'));
         }else {
             return view('kasir.dashboard');
         }

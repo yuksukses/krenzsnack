@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Produk;
-use App\models\Kategori;
-use App\models\PembelianDetail;
-use App\models\PenjualanDetail;
+use App\Models\Produk;
+use App\Models\Kategori;
+use App\Models\PembelianDetail;
+use App\Models\PenjualanDetail;
 use Illuminate\Support\Facades\DB;
 use PDF;
 
@@ -83,7 +83,7 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $produk = Produk::latest()->first() ?? new Produk();
-        $request['kode_produk'] = 'P'. tambah_nol_didepan((int)$produk->id_produk+1, 6);
+        $request['kode_produk'] = 'KRENZ'. tambah_nol_didepan((int)$produk->id_produk+1, 6);
         $produk = Produk::create($request->all());
 
         return response()->json('Data berhasil Disimpan', 200);

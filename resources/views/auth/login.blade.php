@@ -4,14 +4,15 @@
     <div>
         <div>
 
-            <h1 class="logo-name">IN+</h1>
+                        <img alt="image" class="logo-name" src="{{ url($setting->path_logo) }}" width="150" />
 
         </div>
-        <h3>Welcome to IN+</h3>
-        <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+        <br>
+        <h3>Selamat Datang di Krenz Snack</h3>
+        <p>Website Management Krenz Snack
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
         </p>
-        <p>Login in. To see it in action.</p>
+        <p>Masuk Untuk Melihat Detail Bisnis Krenz Snack.</p>
         <form class="m-t" role="form" action="{{ route('login') }}" method="post">
             @csrf
             <div class="form-group @error('email') has-error @enderror">
@@ -29,7 +30,7 @@
             </div>
             <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
         </form>
-        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+        <p class="m-t"> <small>Website Krenz Snack we app framework base on Bootstrap 3 &copy; 2021</small> </p>
     </div>
 </div>
 @endsection

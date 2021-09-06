@@ -10,6 +10,9 @@
                                     class="font-bold">{{ strtoupper(auth()->user()->name) }}</strong>
                             </span> <span class="text-muted text-xs block">{{ ucwords(auth()->user()->level) }}<b
                                     class="caret"></b></span> </span>
+                                  
+                                              <a href="#"><i class="fa fa-circle text-sm text-success"></i> online</a>
+
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a href="{{ route('user.profil') }}">Profil</a></li>
