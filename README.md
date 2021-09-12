@@ -7,6 +7,18 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Cara Download Project
+
+DENGAN COMPOSER
+- [ Ketik git clone https://github.com/yuksukses/krenzsnack.git]
+- [ Composer install ]
+- [ php artisan key:generate ]
+- [ php artisan migrate ]
+- [ php artisan db:seed ]
+## Username Admin
+- [ Email: septiyandwinugroho98@gmail.com ]
+- [ Password: asep0210 ]
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
