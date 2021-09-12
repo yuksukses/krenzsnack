@@ -26,6 +26,14 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">E-mail</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="email" id="email" class="form-control" autofocus>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="alamat" class="col-sm-2 control-label">Alamat</label>
                         <div class="col-sm-10">
                             <textarea name="alamat" id="alamat" cols="10" rows="3" class="form-control"></textarea>

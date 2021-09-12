@@ -19,6 +19,7 @@ class BuatMemberTable extends Migration
             $table->string('nama');
             $table->text('alamat')->nullable();
             $table->string('telepon');
+            $table->string('email');
             $table->timestamps();
         });
     }

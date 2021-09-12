@@ -12,6 +12,7 @@ Daftar Pembelian
         <a href="{{ route('pembelian_detail.index') }}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i>
             Transaksi Aktif</a>
         @endempty
+       
 
     </div>
     <div class="ibox-content">

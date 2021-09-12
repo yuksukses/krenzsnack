@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\TransactionController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\PaymentController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::delete('/transaction/{id}', [TransactionController::class, 'destroy']);
 
 Route::resource('/transaction', TransactionController::class)->except(['create', 'edit']);
+
+Route::get('/', 'API\PaymentController@index');
+Route::get('/pay/{id}', [PenjualanController::class, 'pay']);

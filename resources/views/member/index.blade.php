@@ -26,7 +26,9 @@ Member
                         <th>Kode Member</th>
                         <th>Nama Member</th>
                         <th>Telepon</th>
+                        <th>Email</th>
                         <th>Alamat</th>
+                        <th>Aksi</th>
                     </thead>
                 </table>
             </div>
@@ -53,6 +55,7 @@ Member
                 {data: 'kode_member'},
                 {data: 'nama'},
                 {data: 'telepon'},
+                {data: 'email'},
                 {data: 'alamat'},
                 {data: 'Action', searchable: false, sortable: false},
             ]
@@ -98,6 +101,7 @@ Member
         .done((response) => {
             $('#modal-form [name=nama]').val(response.nama);
             $('#modal-form [name=telepon]').val(response.telepon);
+            $('#modal-form [name=email]').val(response.email);
             $('#modal-form [name=alamat]').val(response.alamat);
         })
         .fail((errors) => {

@@ -145,6 +145,15 @@ Transaksi Penjualan
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="metode_pembayaran" class="col-lg-3 control-label">Metode Pembayaran</label>
+                        <div class="col-lg-8">
+                            <select name="metode_pembayaran" id="metode_pembayaran" class="form-control">
+                                <option>Tunai</option>
+                                <option>Transfer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="kembali" class="col-lg-3 control-label">Kembali</label>
                         <div class="col-lg-8">
                             <input type="text" id="kembali" class="form-control" value="0" readonly>
@@ -253,10 +262,12 @@ Transaksi Penjualan
         $('.btn-simpan').on('click', function() {
             let diterima= parseInt($('#diterima').val());
             let bayar= parseInt($('#bayar').val());
-
-            if (diterima < bayar) {
-            swal("Peringatan!", "Uang yang diterima kurang", "error");
-            return;
+            let metode_pembayaran= ($('#metode_pembayaran').val());
+            if(metode_pembayaran == 'Tunai'){
+                if (diterima < bayar) {
+                swal("Peringatan!", "Uang yang diterima kurang untuk pembayaran tunai", "error");
+                return;
+                }
             }
             if (bayar == 0) {
             swal("Peringatan!", "Masukkan Transaksi", "error");

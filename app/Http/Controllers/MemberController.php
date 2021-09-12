@@ -68,6 +68,7 @@ class MemberController extends Controller
         $member->kode_member = tambah_nol_didepan($kode_member, 5);
         $member->nama = $request->nama;
         $member->telepon = $request->telepon;
+        $member->email = $request->email;
         $member->alamat = $request->alamat;
         $member->save();
 

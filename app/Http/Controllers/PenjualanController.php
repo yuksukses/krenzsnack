@@ -44,11 +44,23 @@ class PenjualanController extends Controller
             ->editColumn('kasir', function ($penjualan) {
                 return $penjualan->user->name ?? '-';
             })
+            ->editColumn('status', function ($penjualan) {
+                return $penjualan->status ?? '-';
+            })
             ->addColumn('Action', function ($penjualan){
-                return '
-                <button type="button" onclick="showDetail(`'. route('penjualan.show', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"> Lihat</i></button>
-                <button type="button" onclick="deleteData(`'. route('penjualan.destroy', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i> Hapus</button>
-                ';
+                if($penjualan->status == 'Belum Bayar' && $penjualan->metode_pembayaran=='Transfer'){
+                    return '
+                    <button type="button" onclick="showDetail(`'. route('penjualan.show', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"> Lihat</i></button>
+                    <button type="button" onclick="deleteData(`'. route('penjualan.destroy', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i> Hapus</button>
+                    <a type="button" href="/pay/'.$penjualan->id_penjualan .'" target="_blank" class= "btn btn-xs btn-warning"><i class= "fa fa-eye"> Bayar</i></a>
+                    ';
+                }else{
+                    return '
+                    <button type="button" onclick="showDetail(`'. route('penjualan.show', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"> Lihat</i></button>
+                    <button type="button" onclick="deleteData(`'. route('penjualan.destroy', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i> Hapus</button>
+                    ';
+                }
+               
             })
             ->rawColumns(['Action'])
             ->make(true);
@@ -81,15 +93,31 @@ class PenjualanController extends Controller
         $penjualan->diskon = $request->diskon;
         $penjualan->bayar = $request->bayar;
         $penjualan->diterima = $request->diterima;
-        $penjualan->update();
+        $penjualan->metode_pembayaran = $request->metode_pembayaran;
+        if($penjualan->metode_pembayaran == 'Tunai'){
+            $penjualan->status = 'Sudah Bayar';
+            $penjualan->update();
 
-        $detail = PenjualanDetail::where('id_penjualan', $penjualan->id_penjualan)->get();
-        foreach ($detail as $item) {
-            $produk = Produk::find($item->id_produk);
-            $produk->stok -= $item->jumlah;
-            $produk->update();
+            $detail = PenjualanDetail::where('id_penjualan', $penjualan->id_penjualan)->get();
+            foreach ($detail as $item) {
+                $produk = Produk::find($item->id_produk);
+                $produk->stok -= $item->jumlah;
+                $produk->update();
+            }
+            return redirect()->route('transaksi.selesai');
+        }else{
+            $penjualan->status = 'Belum Bayar';
+            $penjualan->update();
+
+            // $detail = PenjualanDetail::where('id_penjualan', $penjualan->id_penjualan)->get();
+            // foreach ($detail as $item) {
+            //     $produk = Produk::find($item->id_produk);
+            //     $produk->stok -= $item->jumlah;
+            //     $produk->update();
+            // }
+            return redirect('/pay/'.$request->id_penjualan);
         }
-        return redirect()->route('transaksi.selesai');
+       
     }
 
     public function show($id)

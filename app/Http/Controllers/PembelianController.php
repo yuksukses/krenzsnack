@@ -7,6 +7,7 @@ use App\Models\Produk;
 use App\Models\PembelianDetail;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use App\Services\Midtrans\CreateSnapTokenService;
 
 class PembelianController extends Controller
 {
@@ -104,6 +105,7 @@ class PembelianController extends Controller
      */
     public function show($id)
     {
+       
         $detail = PembelianDetail::with('produk')->where('id_pembelian', $id)->get();
         return datatables()
         ->of($detail)
@@ -125,6 +127,7 @@ class PembelianController extends Controller
         })
         ->rawColumns(['kode_produk'])
         ->make(true);
+
     }
 
     /**

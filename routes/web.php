@@ -15,6 +15,7 @@ use App\Http\Controllers\{
     SettingController,
     SupplierController,
     UserController,
+    PayController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('login');
 });
+Route::get('/pay/{id}', [PayController::class, 'index']);
+Route::get('pay/redirect_midtrans/{id}', 'PayController@redirect_midtrans')->name('pay.redirect_midtrans');
+Route::get('notification', [PayController::class, 'notification_payment']);
+Route::post('notification', [PayController::class, 'notification_payment']);
+// Route::post('notification', 'PayController@notification_payment');
+// Route::get('notification', 'PayController@notification_payment');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -76,6 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/penjualan', [PenjualanController::class, 'index'])->name('penjualan.index');
         Route::get('/penjualan/{id}', [PenjualanController::class, 'show'])->name('penjualan.show');
         Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy'])->name('penjualan.destroy');
+        Route::resource('midtrans', PenjualanController::class)->only(['index', 'show']);
     });
 
     Route::group(['middleware' => 'level:admin,kasir'], function () {
@@ -108,4 +116,5 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/profil', [UserController::class, 'profil'])->name('user.profil');
         Route::post('/profil', [UserController::class, 'updateProfil'])->name('user.updateProfil');
     });
+
 });

@@ -1,0 +1,336 @@
+[12-Sep-2021 17:54:31 Asia/Bangkok] 
+[12-Sep-2021 17:56:18 Asia/Bangkok] 
+[12-Sep-2021 17:59:21 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 16:55:48
+    [transaction_status] => expire
+    [transaction_id] => 7dd50262-6c79-4eb5-a500-33a68243d7de
+    [status_message] => midtrans payment notification
+    [status_code] => 202
+    [signature_key] => 41f10baca5a719f8d1c2fcd831321299a0dd58a9320becb67e26b64a5785d37ef4c7dfdebbf2d54dcdc96980efc5019e31f7d8c70b352df51fe05957b7bfe429
+    [payment_type] => gopay
+    [order_id] => 20
+    [merchant_id] => G311959810
+    [gross_amount] => 17000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:00:47 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 18:00:46
+    [transaction_status] => pending
+    [transaction_id] => 36ac33b6-7d5b-4552-ae09-6054e99e8c5a
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 01d67a3f0b7797fbb295681a5c2b7b1132f2bba77a25abe2d39356ff187a0ac65a22e2b3f36711d4edeeb69d2ac76f9a2ec7a39f81f79fd5d572183325e421a4
+    [payment_type] => gopay
+    [order_id] => 24
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:02:18 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 17:54:09
+    [transaction_status] => pending
+    [transaction_id] => 1b27d057-38f0-4cf9-9ec1-9c7d072a979d
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 2449d60c3bffb4f0edc96d0206ddf75a11595a68ddc2da9e5e1cb6afb97ba2b96c98fb6729a2f51e7811719ba4a7c229f474dc67e48c15e791b2a33a3f158095
+    [payment_type] => gopay
+    [order_id] => 23
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:09:11 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 17:54:09
+    [transaction_status] => expire
+    [transaction_id] => 1b27d057-38f0-4cf9-9ec1-9c7d072a979d
+    [status_message] => midtrans payment notification
+    [status_code] => 202
+    [signature_key] => 31cd88f5386f5dca65f8f57bb8401c74ff1441db68cecd5b431586377b8963fe807b8f28b10c100377fe8bc2adea5aa2ba62e569432e75474646010c33396056
+    [payment_type] => gopay
+    [order_id] => 23
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:10:50 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 18:10:49
+    [transaction_status] => pending
+    [transaction_id] => 7b4466d1-067a-492c-a5e2-83174ca76fa1
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 059f2569dc73f752f1f64295e72d725f1b47f430d644230c002517a9eb57bb7fe76c8941150e28970d0c29c3875fd3880a74dc4cf598d04e7d79d6a9cff3c094
+    [payment_type] => echannel
+    [order_id] => 25
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+    [biller_code] => 70012
+    [bill_key] => 353353294454
+)
+
+[12-Sep-2021 18:13:27 Asia/Bangkok] stdClass Object
+(
+    [va_numbers] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [va_number] => 124127820028414439
+                    [bank] => bri
+                )
+
+        )
+
+    [transaction_time] => 2021-09-12 18:13:26
+    [transaction_status] => pending
+    [transaction_id] => c6536697-7fab-4432-a3cc-4c1a2c3bca25
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 60c379c03e4c354d3e801327df1b8bbb3c77938b6ea61b89771b8a91982e49ecf35d463bb5bbb1ada4bf8a68ef1dbd45862a11d3da2b5863e705176ac63444a7
+    [payment_type] => bank_transfer
+    [payment_amounts] => Array
+        (
+        )
+
+    [order_id] => 28
+    [merchant_id] => G311959810
+    [gross_amount] => 17000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:15:16 Asia/Bangkok] stdClass Object
+(
+    [va_numbers] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [va_number] => 124124612781617801
+                    [bank] => bri
+                )
+
+        )
+
+    [transaction_time] => 2021-09-12 18:15:16
+    [transaction_status] => pending
+    [transaction_id] => b2a468c1-9675-403f-b971-b719c439ecf5
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 4683eca33d3fae98b607fb59f9cf255bac99ea382cc7049447619b4f78f04bb888a840088e5cd07237cc1036eb558f78ef2617923ea8955aa420f594971f80ef
+    [payment_type] => bank_transfer
+    [payment_amounts] => Array
+        (
+        )
+
+    [order_id] => 29
+    [merchant_id] => G311959810
+    [gross_amount] => 40000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:15:48 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 18:00:46
+    [transaction_status] => expire
+    [transaction_id] => 36ac33b6-7d5b-4552-ae09-6054e99e8c5a
+    [status_message] => midtrans payment notification
+    [status_code] => 202
+    [signature_key] => c6b256e9e6af71e241e31f9a16c0b2a054073dc83afd1b39b54c253d2e1a3dff0598f6d9c8e219c1a82f53d1f1f63125c33ec16d87ec5f20c93418852df3e64c
+    [payment_type] => gopay
+    [order_id] => 24
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:34:39 Asia/Bangkok] stdClass Object
+(
+    [va_numbers] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [va_number] => 8578130836615606
+                    [bank] => bni
+                )
+
+        )
+
+    [transaction_time] => 2021-09-12 18:34:39
+    [transaction_status] => pending
+    [transaction_id] => 9496e4db-60f8-49ea-ae84-7d8fcdfa78d6
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 16f22feb9442eb2c0534011b06bf557a46d629973963312d34a5e8d92127c5606dedd4513dd698ecde32e9e36cf70ef45a88ec4c695488fa690e27233c583fe1
+    [payment_type] => bank_transfer
+    [payment_amounts] => Array
+        (
+        )
+
+    [order_id] => 33
+    [merchant_id] => G311959810
+    [gross_amount] => 50000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 18:52:15 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 18:52:13
+    [transaction_status] => pending
+    [transaction_id] => ae834be5-c0e2-4071-8efa-1793ae9747df
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 2300e5e4710ffdfb95d984325fd72eb4f6f8235e5cc8279a154f90779f71874d34a3ab56d45b8074deda6e446d5842ed6492d2ed6e8d88ad6b7b8276d6ae945d
+    [payment_type] => echannel
+    [order_id] => 34
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+    [biller_code] => 70012
+    [bill_key] => 160050718627
+)
+
+[12-Sep-2021 18:56:14 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 18:56:14
+    [transaction_status] => pending
+    [transaction_id] => a19c4f18-58e9-4260-b823-849f25d36a31
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 2cd6b4ad133763af47b9f935bcc7d2822e18b43591731de0ce2bb61f8d481a0257719b0ba26b22a6b8bdbc846abeec7c9613e812a264e1e0299910c9ef4633cc
+    [payment_type] => echannel
+    [order_id] => 35
+    [merchant_id] => G311959810
+    [gross_amount] => 56000.00
+    [fraud_status] => accept
+    [currency] => IDR
+    [biller_code] => 70012
+    [bill_key] => 358385162672
+)
+
+[12-Sep-2021 18:57:50 Asia/Bangkok] stdClass Object
+(
+    [va_numbers] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [va_number] => 124123145935467688
+                    [bank] => bri
+                )
+
+        )
+
+    [transaction_time] => 2021-09-12 18:57:49
+    [transaction_status] => pending
+    [transaction_id] => 03012ce9-11a4-4d39-af1d-d5064bb6417c
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 174cbb0a42568342cbe19709e6bc4f7fbcf1f82574188102d35938b5376af83619dbc16a874b94bdffd29a206d99bfa96fc38d97ea2a420fbfcdc8a3e873a27b
+    [payment_type] => bank_transfer
+    [payment_amounts] => Array
+        (
+        )
+
+    [order_id] => 36
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 19:00:58 Asia/Bangkok] stdClass Object
+(
+    [va_numbers] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [va_number] => 124125963223875682
+                    [bank] => bri
+                )
+
+        )
+
+    [transaction_time] => 2021-09-12 19:00:57
+    [transaction_status] => pending
+    [transaction_id] => bb8584f0-67b8-48b7-9ee7-958550ce573e
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 3bca9ab1f4eb6e00b5b6bcd2cec758e390dac0466f685d9ce2e0a0f15b2729adb66c25b1fd01a8a63aaae1a523e16480394c4da97f92d4d69cb9e2632520e2b7
+    [payment_type] => bank_transfer
+    [payment_amounts] => Array
+        (
+        )
+
+    [order_id] => 37
+    [merchant_id] => G311959810
+    [gross_amount] => 2000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 19:05:32 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 19:05:31
+    [transaction_status] => pending
+    [transaction_id] => 350f9667-f7fd-4297-a414-2f412db39f2a
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => 08040a7c3fc28a5e2ebed76e6e9d623faa1b8673e194f3860ca43cbeba62c7f8316f7187442dfca4ac6616799a5e6b69185b07a84f38a143e6c758bc655b8f75
+    [payment_type] => gopay
+    [order_id] => 40
+    [merchant_id] => G311959810
+    [gross_amount] => 10000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 19:20:33 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 19:05:31
+    [transaction_status] => expire
+    [transaction_id] => 350f9667-f7fd-4297-a414-2f412db39f2a
+    [status_message] => midtrans payment notification
+    [status_code] => 202
+    [signature_key] => 741e827046a7b3be1c9d6a8a0a2141fe0a13a91170dfaeb8bbe8cc4c245814fa9e1113984b4aea5a63e17d5d52d2f4c60d028bc0d7d5930f8a2fb62078d37649
+    [payment_type] => gopay
+    [order_id] => 40
+    [merchant_id] => G311959810
+    [gross_amount] => 10000.00
+    [fraud_status] => accept
+    [currency] => IDR
+)
+
+[12-Sep-2021 19:38:47 Asia/Bangkok] stdClass Object
+(
+    [transaction_time] => 2021-09-12 19:38:46
+    [transaction_status] => pending
+    [transaction_id] => 95730e77-9918-4d87-bf26-20fceb140883
+    [status_message] => midtrans payment notification
+    [status_code] => 201
+    [signature_key] => b2f1fcde6d94184fd06ba1bef4b34d6162537c7120b1574ae5fb83c1c514e5a9f0b92d87061f089f0bd2c138b069ab42d0970bec7799abae051e04e3c053c1ac
+    [payment_type] => echannel
+    [order_id] => 41
+    [merchant_id] => G311959810
+    [gross_amount] => 76500.00
+    [fraud_status] => accept
+    [currency] => IDR
+    [biller_code] => 70012
+    [bill_key] => 563980748240
+)
+

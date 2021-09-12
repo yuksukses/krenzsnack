@@ -17,7 +17,9 @@ Daftar Penjualan
                     <th>Total Bayar</th>
                     <th>Member</th>
                     <th>Kasir</th>
-                    <th width="15%"><i class="fa fa-cog"></i></th>
+                    <th>Status</th>
+                    <th width="15%"><i class="fa fa-cog"></i> Aksi</th>
+
                 </thead>
             </table>
         </div>
@@ -52,6 +54,7 @@ Daftar Penjualan
                 {data: 'bayar'},
                 {data: 'member'},
                 {data: 'kasir'},
+                {data: 'status'},
                 {data: 'Action', searchable: false, sortable: false},
             ]
         });
