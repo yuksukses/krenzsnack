@@ -8,12 +8,12 @@ Transaksi Penjualan
     <div class="ibox-content">
         <div class="table-responsive">
             <div class="alert alert-success">
-                <i class="fa fa-check icon"> Data transaksi telah disimpan</i>
+                <i class="fa fa-check icon"> Transaksi penjualan berhasil disimpan</i>
             </div>
         </div>
     </div>
     <div class="ibox-footer">
-        <button onclick="notaKecil('{{ route('transaksi.nota_kecil') }}', 'Nota Kecil')" class="btn btn-warning"><i
+        <button onclick="notaKecil('{{ route('transaksi.nota_kecil',$id_penjualan)}}', 'Nota Kecil')" class="btn btn-warning"><i
                 class="fa fa-print"></i> Cetak Nota</button>
         <button onclick="notaBesar('{{ route('transaksi.nota_besar') }}', 'Nota PDF')" class="btn btn-success"><i
                 class="fa fa-print"></i> Nota besar</button>
@@ -40,12 +40,12 @@ Transaksi Penjualan
         const systemZoom = width / window.screen.availWidth;
         const left       = (width - w) / 2 / systemZoom + dualScreenLeft
         const top        = (height - h) / 2 / systemZoom + dualScreenTop
-        const newWindow  = window.open(url, title, 
+        const newWindow  = window.open(url, title,
         `
             scrollbars=yes,
-            width  = ${w / systemZoom}, 
-            height = ${h / systemZoom}, 
-            top    = ${top}, 
+            width  = ${w / systemZoom},
+            height = ${h / systemZoom},
+            top    = ${top},
             left   = ${left}
         `
         );

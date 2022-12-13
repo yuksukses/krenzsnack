@@ -18,7 +18,7 @@ Daftar Penjualan
                     <th>Member</th>
                     <th>Kasir</th>
                     <th>Status</th>
-                    <th width="15%"><i class="fa fa-cog"></i> Aksi</th>
+                    <th width="10%"><i class="fa fa-cog"></i> Aksi</th>
 
                 </thead>
             </table>
@@ -33,17 +33,17 @@ Daftar Penjualan
     let table, table1;
 
     $(function () {
-            
+
         table = $('.table-penjualan').DataTable({
             processing: true,
             autoWidth: false,
             dom: '<"html5buttons"B>lTfgitp',
                 buttons: [
-                    {extend: 'excel', text:'<i class="fa fa-download"></i> Excel', title: 'Daftar Penjualan'},                
+                    {extend: 'excel', text:'<i class="fa fa-download"></i> Excel', title: 'Daftar Penjualan'},
                 ],
             ajax: {
                 url: '{{ route('penjualan.data') }}',
-        
+
             },
             columns: [
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
@@ -100,6 +100,6 @@ Daftar Penjualan
         });
         });
     }
-    
+
 </script>
 @endpush

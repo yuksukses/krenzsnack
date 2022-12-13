@@ -8,12 +8,6 @@ Daftar Pembelian
     <div class="ibox-title">
         <button onclick="addForm()" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>
             Transaksi Baru</button>
-        @empty(! session('id_pembelian'))
-        <a href="{{ route('pembelian_detail.index') }}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i>
-            Transaksi Aktif</a>
-        @endempty
-       
-
     </div>
     <div class="ibox-content">
         <div class="table-responsive">
@@ -26,7 +20,7 @@ Daftar Pembelian
                     <th>Total Harga</th>
                     <th>Diskon</th>
                     <th>Total Bayar</th>
-                    <th width="15%"><i class="fa fa-cog"></i></th>
+                    <th width="10%"><i class="fa fa-cog"></i></th>
                 </thead>
             </table>
         </div>
@@ -44,6 +38,10 @@ Daftar Pembelian
         table = $('.table-pembelian').DataTable({
             processing: true,
             autoWidth: false,
+            dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'excel', text:'<i class="fa fa-download"></i> Excel', title: 'Daftar Penjualan'},
+                ],
             ajax: {
                 url: '{{ route('pembelian.data') }}',
             },

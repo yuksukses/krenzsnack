@@ -14,6 +14,12 @@ class PenjualanController extends Controller
 
     public function index()
     {
+        $penjualan = Penjualan::orderBy('id_penjualan','desc')->get();
+        foreach($penjualan as $item) {
+            if($item->total_item == 0){
+                $item->delete();
+            }
+        }
         return view('penjualan.index');
     }
 
@@ -56,15 +62,17 @@ class PenjualanController extends Controller
                     ';
                 }else{
                     return '
-                    <button type="button" onclick="showDetail(`'. route('penjualan.show', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"> Lihat</i></button>
-                    <button type="button" onclick="deleteData(`'. route('penjualan.destroy', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i> Hapus</button>
+                    <button type="button" onclick="showDetail(`'. route('penjualan.show', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"></i></button>
+                    <a type="button"  href="'.route('transaksi.selesai',$penjualan->id_penjualan).'" target="_blank" class= "btn btn-xs btn-warning"><i class= "fa fa-print"></i></a>
+
+                    <button type="button" onclick="deleteData(`'. route('penjualan.destroy', $penjualan->id_penjualan) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i></button>
                     ';
                 }
-               
+
             })
             ->rawColumns(['Action'])
             ->make(true);
-        
+
     }
 
     public function create()
@@ -78,7 +86,7 @@ class PenjualanController extends Controller
         $penjualan->diterima = 0;
         $penjualan->id_user = auth()->id();
         $penjualan->save();
-        
+
         session(['id_penjualan' => $penjualan->id_penjualan]);
         return redirect()->route('transaksi.index');
 
@@ -104,7 +112,7 @@ class PenjualanController extends Controller
                 $produk->stok -= $item->jumlah;
                 $produk->update();
             }
-            return redirect()->route('transaksi.selesai');
+            return redirect()->route('transaksi.selesai',$penjualan->id_penjualan);
         }else{
             $penjualan->status = 'Belum Bayar';
             $penjualan->update();
@@ -117,7 +125,7 @@ class PenjualanController extends Controller
             // }
             return redirect('/pay/'.$request->id_penjualan);
         }
-       
+
     }
 
     public function show($id)
@@ -164,16 +172,34 @@ class PenjualanController extends Controller
         return response(null, 204);
     }
 
-    public function selesai()
+    public function selesai($id_penjualan)
     {
+        $penjualan = Penjualan::where('id_penjualan',$id_penjualan)->first();
+        $detail = PenjualanDetail::with('produk')
+            ->where('id_penjualan', $id_penjualan)
+            ->get();
         $setting = Setting::first();
-        return view('penjualan.selesai', compact('setting'));
+        $id_penjualan = $id_penjualan;
+        return view('penjualan.selesai', compact('setting','detail','id_penjualan'));
     }
 
-    public function notaKecil()
+    // public function notaKecil()
+    // {
+    //     $setting = Setting::first();
+    //     $penjualan = Penjualan::find(session('id_penjualan'));
+    //     if (! $penjualan) {
+    //         abort(404);
+    //     }
+    //     $detail = PenjualanDetail::with('produk')
+    //     ->where('id_penjualan', session('id_penjualan'))
+    //     ->get();
+
+    //     return view('penjualan.nota-kecil', compact('setting', 'penjualan', 'detail'));
+    // }
+    public function notaKecil($id_penjualan)
     {
-        $setting = Setting::first();
-        $penjualan = Penjualan::find(session('id_penjualan'));
+              $setting = Setting::first();
+        $penjualan = Penjualan::where('id_penjualan',$id_penjualan)->first();
         if (! $penjualan) {
             abort(404);
         }

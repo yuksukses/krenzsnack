@@ -35,6 +35,10 @@ Pemasukan
         table = $('.table').DataTable({
             processing: true,
             autoWidth: false,
+            dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'excel', text:'<i class="fa fa-download"></i> Excel', title: 'Daftar Penjualan'},
+                ],
             ajax: {
                 url: '{{ route('pemasukan.data') }}',
             },

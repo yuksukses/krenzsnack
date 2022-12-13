@@ -1,10 +1,7 @@
 <?php
-
-
-use Illuminate\Support\Facades\DB;
-
 namespace Midtrans;
 
+use Illuminate\Support\Facades\DB;
 
 
 require_once 'midtrans/Midtrans.php';
@@ -49,7 +46,7 @@ $transaction_details = array(
 
 );
 
-// $enable_payments = array($transaksi->metode); 
+// $enable_payments = array($transaksi->metode);
 
 // $enable_payments = array('gopay');
 
@@ -98,7 +95,7 @@ $transaction = array(
     // 'enabled_payments' => $enable_payments,
 
     'item_details' => $item_details,
-  
+
 );
 
 if ($currentToken == '' || empty($currentToken)) {
@@ -134,7 +131,7 @@ if ($currentToken == '' || empty($currentToken)) {
         },
         onPending: function(result) {
             window.location.href = "/penjualan"
-  
+
         },
         onError: function(result) {
             window.location.href = "/penjualan"

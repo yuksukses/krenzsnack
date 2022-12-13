@@ -8,11 +8,10 @@
 
         </div>
         <br>
-        <h3>Selamat Datang di Krenz Snack</h3>
-        <p>Website Management Krenz Snack
+        <h3>Apotek Puri Sehat
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
-        </p>
-        <p>Masuk Untuk Melihat Detail Bisnis Krenz Snack.</p>
+        </h3>
+        <p>Masuk Untuk Melihat Detail Bisnis POS </p>
         <form class="m-t" role="form" action="{{ route('login') }}" method="post">
             @csrf
             <div class="form-group @error('email') has-error @enderror">
@@ -30,7 +29,7 @@
             </div>
             <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
         </form>
-        <p class="m-t"> <small>Website Krenz Snack we app framework base on Bootstrap 3 &copy; 2021</small> </p>
+        <p class="m-t"> <small>Purchase & Point Of Sales &copy; 2022</small> </p>
     </div>
 </div>
 @endsection

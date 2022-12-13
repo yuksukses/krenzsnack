@@ -33,6 +33,10 @@ Kategori
         table = $('.table').DataTable({
             processing: true,
             autoWidth: false,
+            dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'excel', text:'<i class="fa fa-download"></i> Excel', title: 'Daftar Penjualan'},
+                ],
             ajax: {
                 url: '{{ route('kategori.data') }}',
             },
@@ -42,7 +46,7 @@ Kategori
                 {data: 'Action', searchable: false, sortable: false},
             ]
         });
-        
+
         $('#modal-form').validator().on('submit', function (e){
             if (! e.preventDefault()){
                 $.post($('#modal-form form').attr('action'), $('#modal-form form').serialize())
@@ -109,9 +113,9 @@ Kategori
         });
     });
     }
-    
-    
-        
-    
+
+
+
+
 </script>
 @endpush

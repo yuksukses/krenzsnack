@@ -15,9 +15,6 @@ Produk
         <button type="button" onclick="cetakBarcode('{{ route('produk.cetak_barcode') }}')"
             class="btn btn-warning btn-sm"><i class="fa fa-barcode"></i>
             Cetak Barcode</button>
-        <button type="button" onclick="cetakBarcode('{{ route('produk.cetak_barcode') }}')"
-            class="btn btn-info btn-sm"><i class="fa fa-download"></i>
-            Export Excel</button>
     </div>
     <div class="ibox-content">
         <form class="form-produk" method="post">
@@ -55,6 +52,10 @@ Produk
         table = $('.table').DataTable({
             processing: true,
             autoWidth: false,
+            dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'excel', text:'<i class="fa fa-download"></i> Excel', title: 'Daftar Penjualan'},
+                ],
             ajax: {
                 url: '{{ route('produk.data') }}',
             },
@@ -163,8 +164,8 @@ Produk
         if ($('input:checked').length < 1) {
             alert('Pilih data yang akan dicetak');
             return;
-        }else if ($('input:checked').length < 5){
-            alert('Pilih minimal 5 data untuk dicetak');
+        }else if ($('input:checked').length < 3){
+            alert('Pilih minimal 3 data untuk dicetak');
             return;
         }else{
             $('.form-produk').attr('action', url).attr('target', '_blank').submit();

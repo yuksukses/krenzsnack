@@ -11,18 +11,20 @@ use App\Services\Midtrans\CreateSnapTokenService;
 
 class PembelianController extends Controller
 {
-    
+
     public function index()
     {
+        $pembelian = Pembelian::orderBy('id_pembelian', 'desc')->first();
         $supplier = Supplier::orderBy('nama')->get();
+        if ($pembelian != null && $pembelian->total_item == 0) {
+            $pembelian->delete();
+        }
         return view('pembelian.index', compact('supplier'));
     }
 
     public function data()
     {
-        // $pembelian = Pembelian::leftJoin('supplier', 'supplier.id_supplier', 'pembelian.id_supplier')
-        // ->select('pembelian.*', 'nama')
-        // ->orderBy('id_pembelian', 'desc')->get();
+
         $pembelian = Pembelian::orderBy('id_pembelian', 'desc')->get();
 
         return datatables()
@@ -48,9 +50,9 @@ class PembelianController extends Controller
         })
         ->addColumn('Action', function ($pembelian){
             return '
-                <button type="button" onclick="showDetail(`'. route('pembelian.show', $pembelian->id_pembelian) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"> Lihat</i></button>
-                <button type="button" onclick="deleteData(`'. route('pembelian.destroy', $pembelian->id_pembelian) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i> Hapus</button>
-            ';
+                <button type="button" onclick="showDetail(`'. route('pembelian.show', $pembelian->id_pembelian) .'`)" class= "btn btn-xs btn-info"><i class= "fa fa-eye"></i></button>
+                <button type="button" onclick="deleteData(`'. route('pembelian.destroy', $pembelian->id_pembelian) .'`)" class= "btn btn-xs btn-danger"><i class= "fa fa-trash"></i></button>
+                ';
         })
         ->rawColumns(['Action'])
         ->make(true);
@@ -105,7 +107,7 @@ class PembelianController extends Controller
      */
     public function show($id)
     {
-       
+
         $detail = PembelianDetail::with('produk')->where('id_pembelian', $id)->get();
         return datatables()
         ->of($detail)

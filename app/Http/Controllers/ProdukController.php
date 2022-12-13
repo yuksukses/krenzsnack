@@ -56,7 +56,7 @@ class ProdukController extends Controller
         ->addIndexColumn()
         ->addColumn('select_all', function ($produk){
             return '<input type="checkbox" name="id_produk[]" value="'. $produk->id_produk .'">';
-            
+
         })
         ->addColumn('kode_produk', function ($produk){
             return '<span class="label label-primary">'. $produk->kode_produk .'</span>';

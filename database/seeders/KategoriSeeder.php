@@ -17,13 +17,19 @@ class KategoriSeeder extends Seeder
     {
         DB::table('kategori')->insert([
             [
-                'nama_kategori' => 'Snacks'
+                'nama_kategori' => 'Obat Sirup'
             ],
             [
-                'nama_kategori' => 'Makanan'
+                'nama_kategori' => 'Obat Tablet'
             ],
             [
-                'nama_kategori' => 'Minuman'
+                'nama_kategori' => 'Obat Granul/Serbuk'
+            ],
+            [
+                'nama_kategori' => 'Obat Tetes'
+            ],
+            [
+                'nama_kategori' => 'Obat Salep'
             ]
         ]);
     }

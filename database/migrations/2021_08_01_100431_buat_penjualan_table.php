@@ -21,6 +21,8 @@ class BuatPenjualanTable extends Migration
             $table->tinyInteger('diskon')->default(0);
             $table->integer('bayar')->default(0);
             $table->integer('diterima')->default(0);
+            $table->string('metode_pembayaran')->default('tunai');
+            $table->string('status')->nullable();
             $table->integer('id_user');
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class SettingTableSeeder extends Seeder
     {
         DB::table('setting')->insert([
             'id_setting' => 1,
-            'nama_perusahaan' => 'Krenz Snack',
+            'nama_perusahaan' => 'POS - Apotek Puri sehat',
             'alamat' => 'Jl. KH Hasyim Ashari No.17 Pinang - Kota Tangerang',
             'Telepon' => '081298703817',
             'tipe_nota' => 1, //kecil

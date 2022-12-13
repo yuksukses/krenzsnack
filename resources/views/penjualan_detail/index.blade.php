@@ -116,7 +116,7 @@ Transaksi Penjualan
                     <input type="hidden" name="total" id="total">
                     <input type="hidden" name="total_item" id="total_item">
                     <input type="hidden" name="bayar" id="bayar">
-                    <input type="hidden" name="id_member" id="id_member" value="{{ $memberSelected->nama }}">
+                    <input type="hidden" name="id_member" id="id_member" value="{{ $memberSelected->id }}">
 
                     <div class="form-group row">
                         <label for="totalrp" class="col-lg-3 control-label">Total</label>
@@ -128,7 +128,7 @@ Transaksi Penjualan
                         <label for="diskon" class="col-lg-3 control-label">Diskon</label>
                         <div class="col-lg-8">
                             <input type="number" name="diskon" id="diskon" class="form-control"
-                                value="{{ ! empty($memberSelected->nama) ? $diskon : 0 }}" readonly>
+                                value="{{ ! empty($memberSelected->diskon) ? $diskon : 0 }}" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -148,8 +148,7 @@ Transaksi Penjualan
                         <label for="metode_pembayaran" class="col-lg-3 control-label">Metode Pembayaran</label>
                         <div class="col-lg-8">
                             <select name="metode_pembayaran" id="metode_pembayaran" class="form-control">
-                                <option>Tunai</option>
-                                <option>Transfer</option>
+                                <option value="Tunai">Tunai</option>
                             </select>
                         </div>
                     </div>
@@ -239,7 +238,7 @@ Transaksi Penjualan
                 })
             })
             .fail(errors => {
-                
+
             })
         });
 
@@ -253,7 +252,7 @@ Transaksi Penjualan
         $('#diterima').on('input', function() {
            if ($(this).val() == "") {
                $(this).val(0).select();
-           } 
+           }
            loadForm($('#diskon').val(), $(this).val());
         }).focus(function () {
             $(this).select();
@@ -370,7 +369,6 @@ Transaksi Penjualan
                 $('.bayar-kembali').text('Total Bayar');
                 $('.tampil-bayar').text('Rp '+ response.bayarrp);
                 $('.tampil-terbilang').text(response.terbilang);
-
                 $('#kembali').val('Rp '+ response.kembalirp);
                 if ($('#diterima').val() != 0) {
                     $('.bayar-kembali').text('Uang Kembali');
@@ -385,6 +383,6 @@ Transaksi Penjualan
     }
 
 
-    
+
 </script>
 @endpush
