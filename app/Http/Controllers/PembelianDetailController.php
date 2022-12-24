@@ -13,15 +13,12 @@ class PembelianDetailController extends Controller
 {
     public function index()
     {
-
-
         $id_pembelian = session('id_pembelian');
-        // $id_pembelian = 2;
         $produk = Produk::leftJoin('kategori', 'kategori.id_kategori', 'produk.id_kategori')
         ->select('produk.*', 'nama_kategori')
         ->orderBy('kode_produk', 'asc')->get();
         $supplier = Supplier::find(session('id_supplier'));
-        $supplier = Supplier::find(1);
+        // $supplier = Supplier::find($supplier);
         $diskon = Pembelian::find($id_pembelian)->diskon ?? 0;
 
         if (! $supplier) {
